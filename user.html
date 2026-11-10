@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movies - CineBook</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">Cine<span>Book</span></div>
+    <div id="userArea"></div>
+  </header>
+  <div class="container wide">
+    <h2>Now showing</h2>
+    <form id="filterForm" class="filter" novalidate>
+      <div class="form-group">
+        <label for="search">Search by title</label>
+        <input type="text" id="search" placeholder="Movie title">
+        <span class="error" id="searchError"></span>
+      </div>
+      <div class="form-group">
+        <label for="city">Location</label>
+        <select id="city"><option value="">All locations</option></select>
+      </div>
+      <div class="form-group">
+        <label for="slot">Time</label>
+        <select id="slot">
+          <option value="">All times</option>
+          <option value="morning">Morning (before 12 PM)</option>
+          <option value="afternoon">Afternoon (12-5 PM)</option>
+          <option value="evening">Evening (5-9 PM)</option>
+          <option value="night">Night (after 9 PM)</option>
+        </select>
+      </div>
+      <button type="submit">Search</button>
+    </form>
+    <table>
+      <thead><tr><th>Movie</th><th>Language</th><th>Hall</th><th>Location</th><th>Show time</th><th>Normal</th><th>VIP</th><th>Seats</th></tr></thead>
+      <tbody id="list"></tbody>
+    </table>
+  </div>
+  <script src="common.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
