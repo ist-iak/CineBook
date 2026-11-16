@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CineBook Login</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+  <div class="page-container">
+
+    <!-- Left side -->
+    <div class="welcome-section">
+
+      <!-- Brand Logo -->
+      <div class="brand">
+        <span class="brand-name">Cine<span>Book</span></span>
+      </div>
+
+    </div>
+
+    <!-- Right side -->
+    <div class="login-section">
+
+      <div class="login-box">
+
+        <div class="top-links">
+          <a href="index.html">← Back to home</a>
+          <span>WELCOME BACK</span>
+        </div>
+
+        <h1>Log in to CineBook</h1>
+
+        <p class="subtitle">
+          Enter your details to access your account.
+        </p>
+
+        <form id="loginForm" novalidate>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input
+              type="text"
+              id="email"
+              placeholder="you@example.com"
+            >
+            <span class="error" id="emailError"></span>
+          </div>
+
+          <!-- Password -->
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="At least 8 characters"
+            >
+            <span class="error" id="passwordError"></span>
+          </div>
+
+          <!-- Forgot Password -->
+          <div class="forgot-row">
+            <a href="#" id="forgotPassword">Forgot password?</a>
+          </div>
+
+          <!-- Login Button -->
+          <button type="submit">
+            Log in <span>→</span>
+          </button>
+
+        </form>
+
+        <p class="create-account">
+          New to CineBook?
+          <a href="register.html">Create an account</a>
+        </p>
+
+        <!-- Dashboard Preview -->
+        <div class="preview-section">
+          <span>Preview dashboard:</span>
+          <a href="#" class="preview-button">Admin</a>
+          <a href="#" class="preview-button">Super Admin</a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="login.js"></script>
+
+</body>
+</html>
