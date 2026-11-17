@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineBook - Movies</title>
+    <link rel="stylesheet" href="user.css">
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="logo">
+                <span class="logo-icon">🎬</span>
+                <span>Cine<span class="red">Book</span></span>
+            </div>
+            <nav>
+    <button class="nav-btn active" data-page="now">▶ Now Showing</button>
+    <button class="nav-btn" data-page="soon">▣ Coming Soon</button>
+    <button class="nav-btn" data-page="cart">🛒 Cart (<span id="cartCount">0</span>)</button>
+           </nav>
+            <div class="sidebar-bottom"><p>Enjoy your movie!</p></div>
+        </aside>
+
+        <main class="main">
+            <header class="topbar">
+                <h2 id="pageTitle">Now Showing</h2>
+            </header>
+
+            <section class="filter-box" id="filterBox">
+                <div class="form-group">
+                    <label for="search">Search by Title</label>
+                    <input type="text" id="search" placeholder="Movie title">
+                </div>
+                <div class="form-group">
+                    <label for="city">Location</label>
+                    <select id="city">
+                        <option value="">All locations</option>
+                        <option value="Dhaka">Dhaka</option>
+                        <option value="Chittagong">Chittagong</option>
+                        <option value="Sylhet">Sylhet</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="slot">Time</label>
+                    <select id="slot">
+                        <option value="">All times</option>
+                        <option value="morning">Morning</option>
+                        <option value="afternoon">Afternoon</option>
+                        <option value="evening">Evening</option>
+                        <option value="night">Night</option>
+                    </select>
+                </div>
+                <button class="search-btn" id="searchBtn">Search</button>
+            </section>
+
+            <section class="movies" id="movieList"></section>
+            <section class="details-box" id="detailsBox"></section>
+            <section class="cart-box" id="cartBox"></section>
+        </main>
+    </div>
+    <script src="user.js"></script>
+</body>
+</html>
