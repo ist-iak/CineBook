@@ -22,7 +22,7 @@ body {
   justify-content: space-between;
   padding: 30px 6%;
   color: #ffffff;
-  background-image: linear-gradient(to top, rgba(0, 7, 18, 0.94), rgba(0, 7, 18, 0.08) 70%), url("cinema-background.jpg");
+  background-image: linear-gradient(to top, rgba(0, 7, 18, 0.94), rgba(0, 7, 18, 0.08) 70%), url("../images/Login&Registration-background.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -211,8 +211,10 @@ button:hover {
   font-size: 13px;
 }
 
-.login-note span {
-  color: #ed293d;
+.login-note a {
+  color: #ed263d;
+  text-decoration: none;
+  font-size: 12px;
   font-weight: bold;
 }
 

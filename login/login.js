@@ -1,3 +1,9 @@
+const accounts = [
+  { email: "user@gmail.com",  password: "userpass",  role: "user",       page: "../user/user.html" },
+  { email: "admin@gmail.com", password: "adminpass", role: "admin",      page: "../admin/admin.html" },
+  { email: "super@gmail.com", password: "sadminpass", role: "superadmin", page: "../superadmin/superadmin.html" }
+];
+
 const form = document.getElementById("loginForm");
 
 form.addEventListener("submit", function (event) {
@@ -53,15 +59,21 @@ form.addEventListener("submit", function (event) {
 
   // Success
 
-  if (valid) {
-
-    alert("Login form submitted successfully!");
-
-    form.reset();
-
-    clearErrors();
-
+if (valid) {
+  let found = null;
+  for (let i = 0; i < accounts.length; i++) {
+    if (accounts[i].email === email.value.trim().toLowerCase() && accounts[i].password === password.value) {
+      found = accounts[i];
+    }
   }
+
+  if (found === null) {
+    showError(password, "passwordError", "Wrong email or password.");
+  } else {
+    sessionStorage.setItem("cbRole", found.role);
+    window.location.href = found.page;
+  }
+}
 
 });
 

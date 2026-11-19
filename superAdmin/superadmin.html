@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineBook - Super Admin Dashboard</title>
+    <link rel="stylesheet" href="superadmin.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="brand">
+            <span class="brand-icon">🎬</span>
+            <span>Cine<span class="brand-red">Book</span></span>
+        </div>
+
+        <nav class="navigation">
+            <button class="nav-btn active" data-page="dashboard">▦ Dashboard</button>
+            <button class="nav-btn" data-page="halls">▣ Cinema Halls</button>
+            <button class="nav-btn" data-page="admins">♙ Admins</button>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <p>Super Admin Dashboard</p>
+            <span>Manage your CineBook platform</span>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div class="topbar-left">
+                <button type="button" class="back-btn" id="backButton">← Back</button>
+                <div>
+                    <p class="eyebrow">CINEBOOK MANAGEMENT</p>
+                    <h1 id="pageTitle">Dashboard Overview</h1>
+                </div>
+            </div>
+        </header>
+
+        <section id="dashboardPage" class="page-section">
+            <div class="welcome">
+                <div>
+                    <p class="eyebrow">WELCOME TO CINEBOOK</p>
+                    <h2>System Overview</h2>
+                    <p>Manage cinema halls and monitor your platform.</p>
+                </div>
+                <span class="welcome-icon">🎟️</span>
+            </div>
+
+            <div class="stats" id="stats"></div>
+
+            <div class="panel">
+                <div class="panel-heading">
+                    <div>
+                        <h2>Quick Actions</h2>
+                        <p>Choose what you want to manage.</p>
+                    </div>
+                </div>
+                <div class="quick-actions">
+                    <button class="action-card" data-page="halls">
+                        <span>＋</span>
+                        <strong>Manage Cinema Halls</strong>
+                        <small>Add new halls or review existing halls.</small>
+                    </button>
+                    <button class="action-card" data-page="admins">
+                        <span>♙</span>
+                        <strong>View Admins</strong>
+                        <small>See the administrators registered in the system.</small>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="hallsPage" class="page-section" hidden>
+            <div class="content-grid">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div>
+                            <h2>Add a Cinema Hall</h2>
+                            <p>Enter the details of the new cinema hall.</p>
+                        </div>
+                    </div>
+
+                    <form id="hallForm" novalidate>
+                        <div class="form-group">
+                            <label for="hallName">Hall name</label>
+                            <input type="text" id="hallName" placeholder="Enter hall name">
+                            <span class="error" id="hallNameError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <select id="city">
+                                <option value="">Select a city</option>
+                                <option value="Dhaka">Dhaka</option>
+                                <option value="Chittagong">Chittagong</option>
+                                <option value="Sylhet">Sylhet</option>
+                                <option value="Rajshahi">Rajshahi</option>
+                                <option value="Khulna">Khulna</option>
+                            </select>
+                            <span class="error" id="cityError"></span>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="total">Total seats</label>
+                                <input type="number" id="total" placeholder="1 to 500">
+                                <span class="error" id="totalError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="vip">VIP seats</label>
+                                <input type="number" id="vip" placeholder="0 to total">
+                                <span class="error" id="vipError"></span>
+                            </div>
+                        </div>
+
+                        <p id="result" class="result"></p>
+                        <button type="submit" class="primary-btn">＋ Add Hall</button>
+                    </form>
+                </div>
+
+                <div class="panel info-panel">
+                    <div class="info-icon">🏢</div>
+                    <h2>Hall Management</h2>
+                    <p>Keep track of cinema locations and seat capacity from one place.</p>
+                    <div class="info-note">A hall with existing bookings cannot be deleted.</div>
+                </div>
+            </div>
+
+            <div class="panel table-panel">
+                <div class="panel-heading">
+                    <div>
+                        <h2>Registered Halls</h2>
+                        <p>All cinema halls in the system.</p>
+                    </div>
+                    <span class="count-pill" id="hallTotal">0 halls</span>
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr><th>HALL NAME</th><th>CITY</th><th>TOTAL SEATS</th><th>VIP SEATS</th><th>ACTION</th></tr>
+                        </thead>
+                        <tbody id="halls"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="adminsPage" class="page-section" hidden>
+            <div class="panel table-panel">
+                <div class="panel-heading">
+                    <div>
+                        <h2>Registered Admins</h2>
+                        <p>Administrators currently listed in the demo system.</p>
+                    </div>
+                    <span class="count-pill" id="adminTotal">0 admins</span>
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr><th>NAME</th><th>EMAIL</th><th>PHONE</th><th>STATUS</th></tr>
+                        </thead>
+                        <tbody id="admins"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="superadmin.js"></script>
+</body>
+</html>

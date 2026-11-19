@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineBook Admin</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo">Cine<span>Book</span></div>
+        <p class="side-label">MENU</p>
+        <button class="nav-btn active" data-page="dashboard">Dashboard</button>
+        <button class="nav-btn" data-page="movies">Movies</button>
+        <button class="nav-btn" data-page="showtimes">Showtimes</button>
+        <button class="nav-btn" data-page="bookings">Bookings</button>
+        <div class="side-bottom">Admin Dashboard</div>
+    </aside>
+    <main class="main-content">
+        <header class="topbar">
+            <button id="backBtn" class="back-btn">← Back</button>
+            <div><span class="top-title">Admin Dashboard</span></div>
+        </header>
+        <section id="dashboardPage" class="page">
+            <h1>Dashboard</h1>
+            <p class="subtext">Overview of cinema operations</p>
+            <div class="stats">
+                <div class="stat-card"><span>Movies</span><strong>3</strong></div>
+                <div class="stat-card"><span>Showtimes</span><strong>6</strong></div>
+                <div class="stat-card"><span>Bookings</span><strong>24</strong></div>
+                <div class="stat-card"><span>Revenue</span><strong>Tk 18,450</strong></div>
+            </div>
+            <div class="panel">
+                <h2>Quick Overview</h2>
+                <p>Manage movies and view the current sample showtime and booking records.</p>
+                <div class="quick-actions option-cards">
+                    <button class="option-card page-jump" data-page="movies"><span>Manage Movies</span></button>
+                    <button class="option-card page-jump" data-page="showtimes"><span>View Showtimes</span></button>
+                    <button class="option-card page-jump" data-page="bookings"><span>View Bookings</span></button>
+                </div>
+
+            </div>
+        </section>
+        <section id="moviesPage" class="page hidden">
+            <h1>Movie Management</h1>
+            <p class="subtext">Add, edit, or remove movies</p>
+            <div class="panel">
+                <h2 id="formHeading">Add a Movie</h2>
+                <form id="movieForm">
+                    <input type="hidden" id="editId">
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="title">Movie Title</label>
+                            <input id="title" type="text" placeholder="Enter movie title">
+                            <span class="error" id="titleError"></span>
+                        </div>
+                        <div class="field">
+                            <label for="language">Language</label>
+                            <input id="language" type="text" placeholder="English">
+                            <span class="error" id="languageError"></span>
+                        </div>
+                        <div class="field">
+                           <label for="movieShowtime">Showtime</label>
+                           <input type="time" id="movieShowtime">
+                         </div>
+                    </div>
+                    <div class="form-actions">
+                        <button class="primary-btn" type="submit" id="submitBtn">Add Movie</button>
+                        <button class="secondary-btn hidden" type="button" id="cancelEdit">Cancel Edit</button>
+                    </div>
+                    <p id="result"></p>
+                </form>
+            </div>
+            <div class="panel">
+                <h2>Movies</h2>
+                <div class="table-wrap"><table>
+                    <thead><tr><th>Title</th><th>Language</th><th>Showtimes</th><th>Action</th></tr></thead>
+                    <tbody id="movieList"></tbody>
+                </table></div>
+            </div>
+        </section>
+        <section id="showtimesPage" class="page hidden">
+            <h1>Showtimes</h1>
+            <p class="subtext">Sample schedule records</p>
+            <div class="panel"><div class="table-wrap"><table>
+                <thead><tr><th>Movie</th><th>Cinema Hall</th><th>Date</th><th>Time</th><th>Ticket Price</th></tr></thead>
+                <tbody id="showtimeList"></tbody>
+            </table></div></div>
+        </section>
+        <section id="bookingsPage" class="page hidden">
+            <h1>Bookings</h1>
+            <p class="subtext">Sample booking records</p>
+            <div class="panel"><div class="table-wrap"><table>
+                <thead><tr><th>Booking ID</th><th>Customer</th><th>Movie</th><th>Tickets</th><th>Amount</th><th>Status</th></tr></thead>
+                <tbody id="bookingList"></tbody>
+            </table></div></div>
+        </section>
+    </main>
+    <script src="admin.js"></script>
+</body>
+</html>
